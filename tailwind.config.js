@@ -14,6 +14,15 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'process-bg': "url(../public/backgroundImages/process.png)",
+          'handShake' : "url(../public/backgroundImages/handShake.png)",
+          'management-bg' : "url(../public/backgroundImages/managementBackground.png)",
+          'industries-hero': "url(../public/heroImages/industriesHero.jpg)",
+          'management-hero': "url(../public/heroImages/managementHero.jpg)",
+          'testingservices-hero': "url(../public/heroImages/testingservicesHero.jpg)"
+      },
+      colors: {
+        darkblue: '#0F0E2C'
       },
       fontFamily: {
         'sans': ['Poppins', ...defaultTheme.fontFamily.sans],

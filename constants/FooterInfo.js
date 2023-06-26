@@ -1,4 +1,4 @@
-import bulsoft from '@/public/logo/bulsoft.svg';
+import bulsoft from "@/public/logo/bulsoft.svg";
 
  export const footerLinks = {
     footerLogo: {
