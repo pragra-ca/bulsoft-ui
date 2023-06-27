@@ -18,27 +18,29 @@ const Navbar = () => {
         <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 justify-between">
-                  <div className="flex">
-                    <div className="flex flex-shrink-0 items-center">
+              <div className="mx-auto max-w-7xl lg:px-8 ">
+                <div className="flex h-16 justify-between px-2" >
+                  <div className="lg:w-full flex lg:justify-between">
+                    <div className="flex items-center">
                       <Image
-                        className="block h-8 w-auto lg:hidden"
+                      onClick={()=> router.push("/")}
+                        className="block h-8 w-auto lg:hidden cursor-pointer"
                         src={bulsoft}
                         alt="bulsoft"
                       />
                       <Image
-                        className="hidden h-8 w-auto lg:block"
+                       onClick={()=> router.push("/")}
+                        className="hidden h-8 w-auto lg:block cursor-pointer"
                         src={bulsoft}
                         alt="bulsoft"
                       />
                     </div>
-                    <div className="hidden sm:ml-12 md:ml-24 lg:ml-60 sm:flex sm:space-x-8">
+                    <div className="hidden sm:ml-3 md:ml-12 lg:ml-60 sm:flex sm:space-x-5 md:space-x-auto">
                       {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                   
                       {
                         NavLinks && NavLinks.map((navItem)=> (
-                           <h2  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''} px-1 pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
+                           <h2  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''} px-1 pt-1 text-md  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
                              <Link href={navItem.route}>
                              {navItem.name}
                             </Link>

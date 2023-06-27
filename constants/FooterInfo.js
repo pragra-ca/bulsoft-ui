@@ -1,27 +1,30 @@
 import bulsoft from '@/public/logo/bulsoft.svg';
 
+
+
+// import { BiLogoLinkedin,BiLogoMessenger, BiLogoTwitter} from 'react-icons/bi';
  export const footerLinks = {
     footerLogo: {
         logo: bulsoft,
      socialLink: [
         {
             title: 'linkedin',
-            logo: '',
+            icon: 'BsLinkedin',
             route: '/linkedin'
         },
         {
             title: 'messanger',
-            logo: '',
+            icon: 'BsMessenger',
             route: '/messanger'
         },
         {
             title: 'twitter',
-            logo: '',
+            icon: 'BsTwitter',
             route: '/twitter'
         },
         {
             title: 'linkedin',
-            logo: '',
+            icon: 'BsLinkedin',
             route: '/linkedin'
         },
      ]
