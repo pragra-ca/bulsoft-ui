@@ -1,8 +1,11 @@
 import React from 'react'
 import {footerLinks as navigation} from "@/constants/FooterInfo"
 import Image from 'next/image'
+import IconHelper from '@/helper/iconHelper'
 
  const Footer = () => {
+  console.log(navigation.footerLogo.socialLink);
+  
   return (
     <footer className="bg-white" aria-labelledby="footer-heading">
     <h2 id="footer-heading" className="sr-only">
@@ -17,11 +20,11 @@ import Image from 'next/image'
             alt="Company name"
           />
        
-          <div className="flex space-x-6  flex-col sm:flex-row">
-            {navigation.footerLogo.socialLink.map((item) => (
+          <div className="flex space-x-4  pl-4">
+            {navigation?.footerLogo?.socialLink?.map((item:any) => (
               <a key={item.title} href={item.route} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{item.title}</span>
-                {/* <item.icon className="h-6 w-6" aria-hidden="true" /> */}{item.title}
+              { <>{IconHelper(item.icon)}</>}
               </a>
             ))}
           </div>
@@ -76,7 +79,7 @@ import Image from 'next/image'
               <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full items-center justify-center  bg-blue-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Subscribe
                 </button>
@@ -94,76 +97,4 @@ import Image from 'next/image'
   )
 }
 
-// const Footer = () => {
-
-//     return (
-//         <footer>
-//             <h2 id="footer-heading" className="sr-only">
-//                 Footer
-//             </h2>
-//             <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-//              <div  className="grid grid-cols-2 lg:grid-cols-4 xl:gap-8">
-
-//              <div>
-//                 <div className="space-y-8">
-//            <Image
-//              className="w-30"
-//              src={navigation.footerLogo.logo}
-//              alt="Company name"
-//            />
-       
-//            <div className="flex space-x-6">
-//              {navigation.footerLogo.socialLink.map((item) => (
-//                <a key={item.title} href={item.route} className="text-gray-400 hover:text-gray-500">
-//                  <span className="sr-only">{item.title}</span>
-//                  {/* <item.icon className="h-6 w-6" aria-hidden="true" /> */}{item.title}
-//                </a>
-//              ))}
-//            </div>
-//          </div>
-//                 </div>
-
-//                 <div>
-//                 <div>
-//                <h3 className="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
-//                <ul role="list" className="mt-6 space-y-4">
-//                  {navigation.company.map((item) => (
-//                    <li key={item.title}>
-//                      <a href={item.route} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-//                        {item.title}
-//                      </a>
-//                    </li>
-//                  ))}
-//                </ul>
-//              </div>
-//                 </div>
-
-//                 <div>
-//                 <div className="mt-10 md:mt-0">
-//               <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
-//               <ul role="list" className="mt-6 space-y-4">
-//                 {navigation.resources.map((item) => (
-//                   <li key={item.title}>
-//                     <a href={item.route} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
-//                       {item.title}
-//                     </a>
-//                   </li>
-//                 ))}
-//               </ul>
-//             </div>
-
-//                 </div>
-//                 <div>
-//                 <div className="mt-10 md:mt-0">
-//                 <h3 className="text-sm font-semibold leading-6 text-gray-900">Join Our NewsLetter</h3>
-
-//                 </div>
-
-//                 </div>
-
-//              </div>
-//             </div>
-//         </footer>
-//     );
-// }
 export default Footer

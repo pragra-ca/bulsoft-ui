@@ -8,7 +8,7 @@ const ManagementComponent = () => {
             <h1 className="text-4xl text-center text-white font-bold mt-4 mb-2 px-2 py-2">Push your product to next level</h1>
              <p className="text-md text-center text-white font-bold   mb-2  px-2 py-2">Get access to the best IT solution in order to leverage your business.</p>
            <div>
-           <button className="bg-blue-700 text-center  mt-4  py-2 px-4 my-4 rounded-2xl text-white">Get Started</button>
+           <button className="bg-blue-700 text-center  mt-4  py-2 px-4 my-4 cursor-pointer rounded-2xl text-white">Get Started</button>
            </div>
 
         </div>

@@ -1,13 +1,20 @@
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
- function IconHelper (icon) {
-  
-     switch(icon) {
-       case icon === 'FiMenu' :{
-           return <FiMenu />
-       }
+import { BsBriefcaseFill,BsLinkedin,BsTwitter,BsMessenger} from "react-icons/bs";
 
-       default: return <AiOutlineCloseCircle/>
+ function IconHelper (icon) {
+  console.log(icon)
+     switch(icon) {
+       case 'FiMenu' : return <FiMenu />
+       
+       case  'BsLinkedin' : return <BsLinkedin />
+       
+       case  'BsTwitter' : return <BsTwitter />
+       
+       case  'BsMessenger' : return <BsMessenger />
+       
+
+       default: return <BsBriefcaseFill/>
      }
  }
 

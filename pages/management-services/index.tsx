@@ -8,7 +8,7 @@ const ManagementServices = () => {
   return (
     <Layout>
     <div>
-        <ImageHeroComponent heroImage={'bg-management-hero'}/>
+        <ImageHeroComponent heroImage={'bg-management-hero'} title="Management Services"/>
         <ProcessComponent/>
         <ManagementComponent/>
     </div>
