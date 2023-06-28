@@ -5,7 +5,7 @@ const AboutComponent = () => {
   return (
     <div className="flex flex-col md:flex-row ">
         <div className="md:w-1/2">
-            <Image className='m-auto' src={people} alt="" />
+            <Image className='w-full h-screen m-auto' src={people} alt="" />
         </div>
 
         <div className="md:w-1/2 bg-darkblue py-4 text-white">
