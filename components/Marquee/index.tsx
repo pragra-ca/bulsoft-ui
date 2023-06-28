@@ -5,8 +5,8 @@ import {monday, morpheus, openzepplin, oracle, protonet, samsung, segment} from 
 
 const MarqueeComponent = () => {
   return (
-   <div className="py-5">
-    <h2 className="text-center text-lg font-bold mb-2 py-4">Over 32+ software businesses growing with Bulsoft</h2>
+   <div className="py-5 font-poppins">
+    <h2 className="text-center text-xl font-semibold	 mb-2 py-4">Over 32+ software businesses growing with Bulsoft</h2>
      <Marquee autoFill pauseOnHover>
         <div  className="w-full grid grid-cols-7 gap-5 md:gap-12">
         <Image className="ml-5" src={morpheus} alt=""/>

@@ -7,11 +7,11 @@ import IconHelper from '@/helper/iconHelper'
   console.log(navigation.footerLogo.socialLink);
   
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="bg-white mt-4" aria-labelledby="footer-heading">
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
-    <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div className="mx-auto font-poppins max-w-7xl px-6 pb-8 pt-10 lg:px-8 ">
       <div className="xl:grid xl:grid-cols-3 xl:gap-8">
         <div className="space-y-8">
           <Image
@@ -32,11 +32,11 @@ import IconHelper from '@/helper/iconHelper'
         <div className="mt-16 grid md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
           <div className="grid grid-cols-2 gap-5 justify-around">
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
+              <h3 className="text-xl	font-bold	 leading-6 text-gray-900">Company</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.company.map((item) => (
                   <li key={item.title}>
-                    <a href={item.route} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                    <a href={item.route} className="font-medium text-base	leading-6 text-gray-600 hover:text-gray-900">
                       {item.title}
                     </a>
                   </li>
@@ -44,11 +44,11 @@ import IconHelper from '@/helper/iconHelper'
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
+              <h3 className="text-xl font-bold	 leading-6 text-gray-900">Resources</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.resources.map((item) => (
                   <li key={item.title}>
-                    <a href={item.route} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                    <a href={item.route} className="font-medium text-base	leading-6 text-gray-600 hover:text-gray-900">
                       {item.title}
                     </a>
                   </li>
@@ -59,10 +59,8 @@ import IconHelper from '@/helper/iconHelper'
           <div className="md:grid md:grid-cols-1 md:gap-8">
 
           <div className="mt-10 xl:mt-0">
-            <h3 className="text-sm font-semibold leading-6 text-gray-900">Subscribe to our newsletter</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-600">
-              The latest news, articles, and resources, sent to your inbox weekly.
-            </p>
+            <h3 className="text-xl font-bold	 leading-6 text-gray-900">Join to our newsletter</h3>
+           
             <form className="mt-6 sm:flex sm:max-w-md">
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -85,12 +83,15 @@ import IconHelper from '@/helper/iconHelper'
                 </button>
               </div>
             </form>
+            <p className="mt-2 font-medium text-base leading-6 text-gray-600">
+              The latest news, articles, and resources, sent to your inbox weekly.
+            </p>
           </div>
           </div>
         </div>
       </div>
-      <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-        <p className="text-xs leading-5 text-gray-500">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+      <div className="mt-16 border-t-4 border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+        <p className="text-xs leading-5 text-center text-gray-500">&copy; Bulsoft 2022. All rights reserved.</p>
       </div>
     </div>
   </footer>

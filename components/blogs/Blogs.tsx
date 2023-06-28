@@ -6,7 +6,7 @@ const BlogsComponent = () => {
     const router = useRouter()
   return (
     <div>
-        <div className='bg-white py-12'>
+        <div className='bg-white py-12 font-poppins'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto px-15 lg:mx-0 flex flex-col md:flex-row justify-between'>
           <h2 className='w-3/4 md:w-auto m-auto text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4'>
