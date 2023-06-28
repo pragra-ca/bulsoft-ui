@@ -18,9 +18,9 @@ const Navbar = () => {
         <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl lg:px-8 ">
+              <div className="mx-auto max-w-7xl lg:px-8 font-poppins">
                 <div className="flex h-16 justify-between px-2" >
-                  <div className="lg:w-full flex lg:justify-between">
+                  <div className="lg:w-full flex lg:justify-around">
                     <div className="flex items-center">
                       <Image
                       onClick={()=> router.push("/")}
@@ -40,7 +40,7 @@ const Navbar = () => {
                   
                       {
                         NavLinks && NavLinks.map((navItem)=> (
-                           <h2  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''} px-1 pt-1 text-md  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
+                           <h2  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''}  pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
                              <Link href={navItem.route}>
                              {navItem.name}
                             </Link>

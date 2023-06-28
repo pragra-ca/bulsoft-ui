@@ -7,6 +7,7 @@ import MarqueeComponent from '@/components/Marquee'
 import CarouselComponent from '@/components/carouselComponent'
 import ProcessComponent from '@/components/process'
 import ManagementComponent from '@/components/management'
+import Seo from '@/components/seo'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="w-full bg-white">
+        <Seo pageTitle='Home' />
         <HeroComponent />
         <MarqueeComponent />
         <ProcessComponent />

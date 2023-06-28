@@ -10,9 +10,9 @@ const Layout = ({children}:LayoutProp) => {
   return (
     <div>
         <Navbar/>
-        <div  className={`flex min-h-screen flex-col items-center justify-between`}>
+        <main  className={`flex  flex-col items-center justify-between`}>
         {children}
-        </div>
+        </main>
         <Footer/>
     </div>
   )

@@ -8,7 +8,26 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '700px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
     extend: {
+      maxHeight: {
+        '128': '40rem',
+      },
       backgroundImage: {
           'hero-back': "url('../public/backgroundImages/heroTopBackground.png')",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -22,10 +41,16 @@ module.exports = {
           'testingservices-hero': "url(../public/heroImages/testingservicesHero.jpg)"
       },
       colors: {
-        darkblue: '#0F0E2C'
+        darkblue: '#0F0E2C',
+        herobuttonBack:'#1B1C31',
+        logoColor: '#2331D7',
+        processTop: '#5D5FEF',
+        managementGrey: '#64607D',
+        carouselRole: '#757095',
+        carouselCompany: '#C6D3DA'
       },
       fontFamily: {
-        'sans': ['Poppins', ...defaultTheme.fontFamily.sans],
+        'poppins': ['Poppins'],
       },
     },
   },

@@ -5,24 +5,22 @@ import Image from 'next/image'
 const HeroComponent = () => {
   return (
    
-         <div className="relative bg-hero-back bg-no-repeat">
-      <div className="w-full lg:grid lg:grid-cols-2 lg:gap-x-8 md:justify-between">
-        <div className="md:px-12 ml-12 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 lg:pt-12 xl:col-span-6">
-          <div className="mx-auto max-w-2xl lg:mx-0">
+         <div className="relative bg-hero-back bg-no-repeat mx-auto 2xl:container max-w-7xl py-4 px-4 sm:px-6">
+     
+        <div className=" grid lg:grid-cols-2 lg:gap-x-10 justify-center md:justify-between md:px-12 ml-12 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 xl:col-span-6">
+          <div className="mx-auto  md:max-w-2xl lg:max-w-3xl lg:mx-0  ">
            
-            <div className="hidden sm:mt-32 sm:flex lg:mt-16">
             
-            </div>
-            <h1 className="mt-24 text-4xl font-bold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">
-              Data to enrich your online business
+            <h1 className="mt-20 text-5xl md:text-6xl leading-12 font-semibold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">
+             Providing Quality Solutions for Your Business.
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
+            <p className="mt-6 text-lg leading-8 text-gray-600 ">
+              Anim aute id mag adsfasdf asdfasdf adsfa sdfasf adsgasdfasd asdfasdfna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
               fugiat veniam occaecat fugiat aliqua.
             </p>
             <div className="mt-10 flex items-center gap-x-6">
               <button
-                className=" bg-black px-3.5 py-2.5 lg:px-8 lg:py-4 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className=" bg-herobuttonBack  px-3.5 py-2.5 lg:px-8 lg:py-4 text-sm lg:text-xl font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
               </button>
@@ -37,7 +35,7 @@ const HeroComponent = () => {
             alt=""
           />
         </div>
-      </div>
+      
     </div>
     
   )

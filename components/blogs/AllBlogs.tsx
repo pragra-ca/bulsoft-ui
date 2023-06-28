@@ -4,7 +4,7 @@ import blogsHero from "@/public/heroImages/blogsHero.png"
 import { allBlogs } from '@/constants/CardInfo'
 const AllBlogsComponent = () => {
   return (
-    <div>
+    <div className="font-poppins">
         <div className="md:w-3/4 pb-8 border-black border-b-2 m-auto">
             <Image className='m-auto' src={blogsHero} alt="" />
             <h2 className="text-4xl font-bold text-center md:w-3/4 m-auto py-5 px-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias omnis recusandae sapiente! Perferendis, vel.</h2>

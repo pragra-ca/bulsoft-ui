@@ -60,14 +60,6 @@ import bulsoft from '@/public/logo/bulsoft.svg';
         {
             title: 'Free Resources',
             route: '/resources'
-        },
-        {
-            title: 'Careers',
-            route: '/careers'
-        },
-        {
-            title: 'Contact Us',
-            route: '/contact-us'
         }
     ]
 }

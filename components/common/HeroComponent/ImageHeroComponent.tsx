@@ -3,7 +3,7 @@ import React from 'react'
 
 const ImageHeroComponent = ({heroImage,title}:any) => {
   return (
-       <div className={`w-screen h-96  ${heroImage ? heroImage: ''} bg-no-repeat bg-cover bg-right flex items-stretch `}>
+       <div className={`w-full h-96 mx-auto 2xl:container max-w-7xl  ${heroImage ? heroImage: ''} bg-no-repeat bg-cover bg-right flex items-stretch font-poppins`}>
          {/* <Image className='w-screen' src={heroImage} alt="" /> */}
          <h2 className='ml-12 self-center text-white font-bold text-4xl lg:text-6xl '>{title? title : ''}</h2>
        </div>
