@@ -17,9 +17,9 @@ const FlexCard = ({cardData}:FlexCardType) => {
     <div className='lg:w-10/12 m-auto'>
         {cardData && cardData?.map((item:CardType,index:number)=> {
             if(index % 2 === 0) {
-                return <div className='flex flex-col lg:flex-row space-around mt-8 md:mt-6'>
+                return <div className='flex flex-col lg:flex-row space-around mt-8 md:mt-6' key={index}>
                         <div className=' lg:w-1/2 px-8 md:px-4 md:py-10 lg:py-0  m-auto flex'>
-                            <span className='text-2xl font-semibold text-logoColor px-4 border-2 border-transparent border-r-blue-700'>{index+1}</span>
+                            <span className='text-2xl font-semibold text-logoColor px-2 md:px-4 border-2 border-transparent border-r-blue-700'>{index+1}</span>
                             <span>
                                 <h2 className='text-2xl font-semibold text-logoColor py-4 px-6'>{item?.title}</h2>
                                 <p className="font-normal lg:text-xl px-6">{item?.shortDescription} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi laudantium mollitia nemo unde est in eveniet cupiditate quis dolor. Nisi rerum ducimus dolorum quia dolores provident suscipit, minima facilis!</p>
@@ -34,7 +34,7 @@ const FlexCard = ({cardData}:FlexCardType) => {
                 </div>
             }
             else {
-                return <div className='flex flex-col lg:flex-row space-around mt-8 md:mt-6'>
+                return <div className='flex flex-col lg:flex-row space-around mt-8 md:mt-6' key={index}>
 
                      <div  className='lg:w-1/2 mt-4 mb-4 md:py-10 lg:py-0 flex justify-center'>
                      <div  className='mt-4 mb-4 md:py-10 lg:py-0'>
@@ -47,7 +47,7 @@ const FlexCard = ({cardData}:FlexCardType) => {
                                 <h2 className='text-2xl font-semibold text-logoColor py-4 px-6'>{item?.title}</h2>
                                 <p className="font-normal lg:text-xl px-6">{item?.shortDescription} Lorem ipsum dolor sit amet consecteturiis laudantium est adipisci molestiae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, rerum in nam architecto quo beatae! Doloremque, soluta itaque, cumque quo impedit dolores earum fuga corrupti magnam, quis eius praesentium iure? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam modi laudantium mollitia nemo unde est in eveniet cupiditate quis dolor. Nisi rerum ducimus dolorum quia dolores provident suscipit, minima facilis!</p>
                             </span>
-                            <span className='text-2xl font-semibold text-logoColor px-4  border-2 border-transparent border-l-blue-700'>{index+1}</span>
+                            <span className='text-2xl font-semibold text-logoColor px-2 md:px-4  border-2 border-transparent border-l-blue-700'>{index+1}</span>
 
                         </div>
                 </div>

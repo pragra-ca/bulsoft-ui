@@ -10,22 +10,22 @@ import bulsoft from '@/public/logo/bulsoft.svg';
         {
             title: 'linkedin',
             icon: 'BsLinkedin',
-            route: '/linkedin'
+            route: '/'
         },
         {
             title: 'messanger',
             icon: 'BsMessenger',
-            route: '/messanger'
+            route: '/'
         },
         {
             title: 'twitter',
             icon: 'BsTwitter',
-            route: '/twitter'
+            route: '/'
         },
         {
             title: 'linkedin',
             icon: 'BsLinkedin',
-            route: '/linkedin'
+            route: '/'
         },
      ]
     },
@@ -36,30 +36,30 @@ import bulsoft from '@/public/logo/bulsoft.svg';
         },
         {
             title: 'Careers',
-            route: '/careers'
+            route: '/'
         },
         {
-            title: 'Blog',
-            route: '/blog'
+            title: 'Blogs',
+            route: '/blogs'
         },
         {
             title: 'Pricing',
-            route: '/pricing'
+            route: '/'
         }
     ],
 
     resources : [
         {
             title: 'Templates',
-            route: '/templates'
+            route: '/'
         },
         {
             title: 'Tutorials',
-            route: '/tutorials'
+            route: '/'
         },
         {
             title: 'Free Resources',
-            route: '/resources'
+            route: '/'
         }
     ]
 }

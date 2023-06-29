@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import blogsHero from "@/public/heroImages/blogsHero.png"
 import { allBlogs } from '@/constants/CardInfo'
+import Link from 'next/link'
 const AllBlogsComponent = () => {
   return (
     <div className="font-poppins">
@@ -32,10 +33,10 @@ const AllBlogsComponent = () => {
 
                 <div className='md:w-3/4 group relative  m-auto'>
                   <h3 className='mt-3  text-lg  font-semibold leading-6 text-gray-900 group-hover:text-gray-600'>
-                    <a href={post.href}>
+                    <Link href={post.href}>
                       <span className='absolute inset-0' />
                       {post.title}
-                    </a>
+                    </Link>
                   </h3>
                  
                 </div>

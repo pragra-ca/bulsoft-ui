@@ -2,6 +2,7 @@ import React from 'react'
 import {posts, posts2} from "@/constants/CardInfo"
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 const BlogsComponent = () => {
     const router = useRouter()
   return (
@@ -12,7 +13,7 @@ const BlogsComponent = () => {
           <h2 className='w-3/4 md:w-auto m-auto text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4'>
             Our Latest Blog Posts
           </h2>
-          <button className='w-3/4 md:w-auto m-auto bg-blue-500 hover:bg-blue-700 text-white  py-3 px-6 rounded text-base bg-[#5D5FEF]'
+          <button className='w-auto m-auto bg-logoColor hover:bg-blue-700 text-white  py-3 px-6 rounded text-base bg-[#5D5FEF]'
            onClick={()=> router.push('/blogs/all-blogs')}
           >
             See All Blog Posts
@@ -39,19 +40,19 @@ const BlogsComponent = () => {
                 >
                   {post.date}
                 </time>
-                <a
+                <Link
                   href={post.category.href}
                   className='relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
                 >
                   {post.category.title}
-                </a>
+                </Link>
               </div>
               <div className='group relative px-5'>
                 <h3 className='mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'>
-                  <a href={post.href}>
+                  <Link href={post.href}>
                     <span className='absolute inset-0' />
                     {post.title}
-                  </a>
+                  </Link>
                 </h3>
                 <p className='mt-5 line-clamp-3 text-sm leading-6 text-gray-600'>
                   {post.description}
@@ -64,18 +65,18 @@ const BlogsComponent = () => {
             {posts2 && posts2.map((post) => (
               <article
                 key={post.id}
-                className='flex gap-x-3 border-b border-gray-200 pb-4'
+                className='flex justify-between gap-x-2 border-b border-gray-200 pb-4'
               >
-                <div>
-                  <div className='relative mt-8 flex items-center gap-x-4 pb-1'>
+                <div className='w-3/12  flex items-center justify-center mt-5'>
+                  <div className='relative  '>
                     <Image
                       src={post.author.imageUrl}
                       alt=''
-                      className='h-270 w-387 bg-gray-50'
+                      className=' bg-gray-50'
                     />
                   </div>
                 </div>
-                <div>
+                <div className='w-9/12'>
                   <div className='flex items-center gap-x-4 text-xs mt-8'>
                     <time
                       dateTime={post.datetime}
@@ -83,19 +84,19 @@ const BlogsComponent = () => {
                     >
                       {post.date}
                     </time>
-                    <a
+                    <Link
                       href={post.category.href}
                       className='relative z-10 rounded-full bg-gray-50 px-3  font-medium text-gray-600 hover:bg-gray-100'
                     >
                       {post.category.title}
-                    </a>
+                    </Link>
                   </div>
                   <div className='group relative'>
                     <h3 className='mt-1 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'>
-                      <a href={post.href}>
+                      <Link href={post.href}>
                         <span className='absolute inset-0' />
                         {post.title}
-                      </a>
+                      </Link>
                     </h3>
                   </div>
                 </div>

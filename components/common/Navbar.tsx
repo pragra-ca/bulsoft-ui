@@ -40,7 +40,7 @@ const Navbar = () => {
                   
                       {
                         NavLinks && NavLinks.map((navItem)=> (
-                           <h2  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''}  pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
+                           <h2 key={navItem.name}  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''}  pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
                              <Link href={navItem.route}>
                              {navItem.name}
                             </Link>
@@ -74,6 +74,7 @@ const Navbar = () => {
                         NavLinks && NavLinks.map((navItem)=> (
                            <Disclosure.Button 
                            as="h3"
+                           key={navItem.name}
                            onClick={()=> router.push(navItem.route)}
                            className={`block capitalize ${navItem.route === router.asPath? 'border-l-4 border-indigo-500 bg-indigo-50 ': ''} py-2 pl-3 pr-4 text-base font-medium text-gray-500  hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
                              {/* <Link className='w-full' href={navItem.route}> */}
