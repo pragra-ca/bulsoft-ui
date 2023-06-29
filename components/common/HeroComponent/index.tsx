@@ -1,8 +1,10 @@
 import React from 'react'
 import homeHero from "@/public/heroImages/homeHero.png"
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 const HeroComponent = () => {
+  const router = useRouter()
   return (
    
          <div className="relative bg-hero-back bg-no-repeat mx-auto 2xl:container max-w-7xl py-4 px-4 sm:px-6">
@@ -21,6 +23,7 @@ const HeroComponent = () => {
             <div className="mt-10 flex items-center gap-x-6">
               <button
                 className=" bg-herobuttonBack  px-3.5 py-2.5 lg:px-8 lg:py-4 text-sm lg:text-xl font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={()=> router.push('/contact')}
               >
                 Get started
               </button>

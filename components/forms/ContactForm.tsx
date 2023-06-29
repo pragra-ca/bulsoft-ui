@@ -1,7 +1,10 @@
 import React from "react";
 import {useFormik} from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import {sendContactForm} from "@/lib/api"
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from "next/router";
+
 
 const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 const validationSchema = Yup.object().shape({
@@ -16,6 +19,14 @@ const validationSchema = Yup.object().shape({
 });
 
 const ContactForm = () => {
+
+    const router = useRouter()
+
+    const notifySuccess = () => toast.success('Message Sent');
+    const notifyLoading = () => toast.loading('Sending for you');
+    const notifyError = () => toast.error('Error Occured');
+
+
     const formik: any = useFormik({
         initialValues: {
             name: "",
@@ -24,24 +35,40 @@ const ContactForm = () => {
             message: "",
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
+        onSubmit: (values,{setSubmitting}) => {
             // same shape as initial values
-            console.log(JSON.stringify(values));
-            //   axios.post("https://app.pragra.io/api/contact", JSON.stringify(values)).then(
-            //     (response) => {
-
-            //     },
-            //     (error) => {
-            //         console.log(error);
-            //     }
-            // );
+            notifyLoading()
+            // console.log(JSON.stringify(values));
+            
+            sendContactForm(values).then((res)=> {
+                    // console.log(res)
+                    notifySuccess()
+                    router.push("/")
+                    
+            }).catch((err) => {
+                notifyError()
+                console.log(err)
+            })
         },
     });
 
     return (
         <div className="lg:py-8 mx-auto 2xl:container font-poppins">
             <div className="flex flex-col md:flex-row py-5 md:py-20 md:px-10">
-                <div className="md:w-1/2 h-90 px-4 py-8 lg:px-20 text-white m-auto">
+                <div className="md:w-1/2 h-90 px-8 md:px-4 py-8 lg:px-20 text-white m-auto">
+                <Toaster 
+                toastOptions={{
+                    success: {
+                        duration: 3000,
+                      },
+                      loading: {
+                        duration: 3000
+                      },
+                      error: {
+                        duration: 3000
+                      }
+                }}
+                />
                     <p className="text-sm"> WHY CHOOSE US</p>
                     <h1 className="text-4xl font-bold md:text-6xl py-4">
                         Because we provide the most premium services.
@@ -59,7 +86,7 @@ const ContactForm = () => {
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Name</label> */}
                         <input
-                            className=" px-4 py-3 "
+                            className=" px-4 py-3 bg-gray-700 text-white"
                             name="name"
                             value={formik.values.name}
                             onChange={formik.handleChange}
@@ -75,7 +102,7 @@ const ContactForm = () => {
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Email Address</label> */}
                         <input
-                            className="px-4 py-3 "
+                            className="px-4 py-3  bg-gray-700 text-white"
                             name="email"
                             value={formik.values.email}
                             onChange={formik.handleChange}
@@ -83,7 +110,7 @@ const ContactForm = () => {
                             placeholder="Email Address"
                         />
                         {formik.errors?.email && formik.touched?.email && (
-                            <div className="mt-1 text-red-800">
+                            <div className="mt-1 text-red-800 ">
                                 {formik.errors?.email}
                             </div>
                         )}
@@ -91,7 +118,7 @@ const ContactForm = () => {
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Contact No</label> */}
                         <input
-                            className="px-4 py-3 "
+                            className="px-4 py-3  bg-gray-700 text-white"
                             name="contact"
                             value={formik.values.contact}
                             onChange={formik.handleChange}
@@ -107,7 +134,7 @@ const ContactForm = () => {
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Message</label> */}
                         <input
-                            className="px-4 py-3 "
+                            className="px-4 py-3  bg-gray-700 text-white"
                             name="message"
                             value={formik.values.message}
                             onChange={formik.handleChange}
@@ -124,12 +151,12 @@ const ContactForm = () => {
                         <button
                             type="submit"
                             onClick={formik.handleSubmit}
-                            className="px-4 py-3 bg-blue-600 hover:bg-blue-800 rounded-lg"
+                            className="px-4 py-3 bg-blue-600 hover:bg-blue-800 text-white rounded-lg"
                         >
                             Submit
                         </button>
                     </div>
-                </form>
+                </form>            
             </div>
         </div>
     );

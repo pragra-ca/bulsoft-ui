@@ -47,7 +47,8 @@ module.exports = {
         processTop: '#5D5FEF',
         managementGrey: '#64607D',
         carouselRole: '#757095',
-        carouselCompany: '#C6D3DA'
+        carouselCompany: '#C6D3DA',
+        socialLogoColor: '#3734A9'
       },
       fontFamily: {
         'poppins': ['Poppins'],
