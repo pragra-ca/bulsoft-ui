@@ -42,8 +42,15 @@ const ContactForm = () => {
             
             sendContactForm(values).then((res)=> {
                     // console.log(res)
-                    notifySuccess()
-                    router.push("/")
+                    if(res.ok) {
+                        notifySuccess()
+                        router.push("/")
+                    }
+                    else {
+                        notifyError()
+ 
+                    }
+                  
                     
             }).catch((err) => {
                 notifyError()
