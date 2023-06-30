@@ -9,8 +9,8 @@ const BlogsComponent = () => {
     <div>
         <div className='bg-white py-12 font-poppins'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
-        <div className='mx-auto px-15 lg:mx-0 flex flex-col md:flex-row justify-between'>
-          <h2 className='w-3/4 md:w-auto m-auto text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4'>
+        <div className='mx-auto  lg:mx-0 flex flex-col md:flex-row justify-between'>
+          <h2 className='w-3/4 md:w-auto m-auto text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4 text-center'>
             Our Latest Blog Posts
           </h2>
           <button className='w-auto m-auto bg-logoColor hover:bg-blue-700 text-white  py-3 px-6 rounded text-base bg-[#5D5FEF]'
