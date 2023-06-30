@@ -9,11 +9,11 @@ import { useRouter } from 'next/router'
   // console.log(navigation.footerLogo.socialLink);
   const router = useRouter();
   return (
-    <footer className="bg-white mt-4" aria-labelledby="footer-heading">
+    <footer className="bg-white mt-4  mx-auto" aria-labelledby="footer-heading">
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
-    <div className="mx-auto font-poppins max-w-7xl px-6 pb-8 pt-10 lg:px-8 ">
+    <div className="w-full mx-auto font-poppins max-w-7xl 2xl:container  pb-8 pt-10 px-4">
       <div className="xl:grid xl:grid-cols-3 xl:gap-8">
         <div className="space-y-8">
           <Image
@@ -93,7 +93,7 @@ import { useRouter } from 'next/router'
           </div>
         </div>
       </div>
-      <div className="mt-16 border-t-4 border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+      <div className="w-full mt-16 border-t-4 border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
         <p className="text-xs leading-5 text-center text-gray-500">&copy; Bulsoft 2022. All rights reserved.</p>
       </div>
     </div>
