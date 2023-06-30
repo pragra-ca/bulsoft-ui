@@ -38,7 +38,8 @@ module.exports = {
           'management-bg' : "url(../public/backgroundImages/managementBackground.png)",
           'industries-hero': "url(../public/heroImages/industriesHero.jpg)",
           'management-hero': "url(../public/heroImages/managementHero.jpg)",
-          'testingservices-hero': "url(../public/heroImages/testingservicesHero.jpg)"
+          'testingservices-hero': "url(../public/heroImages/testingservicesHero.jpg)",
+          'contact-bg' : "url(../public/backgroundImages/contact.png)"
       },
       colors: {
         darkblue: '#0F0E2C',

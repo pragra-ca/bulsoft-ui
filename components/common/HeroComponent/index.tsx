@@ -9,8 +9,8 @@ const HeroComponent = () => {
    
          <div className="relative bg-hero-back bg-no-repeat mx-auto 2xl:container max-w-7xl py-4 px-4 sm:px-6">
      
-        <div className=" grid lg:grid-cols-2 lg:gap-x-10 justify-center md:justify-between md:px-12 ml-12 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-56 xl:col-span-6">
-          <div className="mx-auto  md:max-w-2xl lg:max-w-3xl lg:mx-0  ">
+        <div className=" grid lg:grid-cols-2 lg:gap-x-10 justify-center md:justify-between   pb-24 pt-10 lg:col-span-7 xl:col-span-6">
+          <div className="mx-auto md:max-w-2xl lg:max-w-3xl lg:mx-0 ">
            
             
             <h1 className="mt-20 text-5xl md:text-6xl leading-12 font-semibold tracking-tight text-gray-900 sm:mt-10 sm:text-6xl">

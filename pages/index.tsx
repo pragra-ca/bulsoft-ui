@@ -10,6 +10,7 @@ import ManagementComponent from '@/components/management'
 import Seo from '@/components/seo'
 import AboutComponent from '@/components/about'
 import TestingServicesComponent from '@/components/testingServices'
+import GoToContact from '@/components/contact/GoToContact'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function Home() {
         <ManagementComponent/>
         <TestingServicesComponent/>
         <CarouselComponent/>
+        <GoToContact />
       </div>
     </Layout>
   )

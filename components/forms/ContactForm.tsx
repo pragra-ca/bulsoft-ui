@@ -61,7 +61,7 @@ const ContactForm = () => {
 
     return (
         <div className="lg:py-8 mx-auto max-w-7xl 2xl:container font-poppins">
-            <div className="flex flex-col lg:flex-row py-4 md:py-20 md:px-10">
+            <div className="flex flex-col lg:flex-row py-4 md:py-20 md:px-6">
                 <div className="lg:w-1/2 px-8 md:px-4 py-5 text-white m-auto">
                 <Toaster 
                 toastOptions={{

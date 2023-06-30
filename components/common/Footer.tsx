@@ -13,7 +13,7 @@ import { useRouter } from 'next/router'
     <h2 id="footer-heading" className="sr-only">
       Footer
     </h2>
-    <div className="w-full mx-auto font-poppins max-w-7xl 2xl:container  pb-8 pt-10 px-4">
+    <div className="w-full mx-auto font-poppins max-w-7xl 2xl:container  pb-8 pt-10 px-4 md:px-10  ">
       <div className="xl:grid xl:grid-cols-3 xl:gap-8">
         <div className="space-y-8">
           <Image
@@ -34,7 +34,7 @@ import { useRouter } from 'next/router'
         </div>
         <div className="mt-16 grid md:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
           <div className="w-full grid grid-cols-2 gap-5 justify-around">
-            <div className="ml-4 md:ml-0">
+            <div className="ml-4 lg:ml-0">
               <h3 className="text-xl	font-bold	 leading-6 text-black">Company</h3>
               <ul role="list" className="mt-6 space-y-4">
                 {navigation.company.map((item) => (
@@ -61,7 +61,7 @@ import { useRouter } from 'next/router'
           </div>
           <div className="md:grid md:grid-cols-1 md:gap-8">
 
-          <div className="mt-10 xl:mt-0">
+          <div className="">
             <h3 className="text-xl font-bold leading-6 text-black">Join to our newsletter</h3>
            
             <form className="mt-6 sm:flex sm:max-w-md">
