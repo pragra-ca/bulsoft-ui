@@ -53,9 +53,9 @@ const ContactForm = () => {
     });
 
     return (
-        <div className="lg:py-8 mx-auto 2xl:container font-poppins">
-            <div className="flex flex-col md:flex-row py-5 md:py-20 md:px-10">
-                <div className="md:w-1/2 h-90 px-8 md:px-4 py-8 lg:px-20 text-white m-auto">
+        <div className="lg:py-8 mx-auto max-w-7xl 2xl:container font-poppins">
+            <div className="flex flex-col lg:flex-row py-4 md:py-20 md:px-10">
+                <div className="lg:w-1/2 px-8 md:px-4 py-5 text-white m-auto">
                 <Toaster 
                 toastOptions={{
                     success: {
@@ -82,7 +82,8 @@ const ContactForm = () => {
                     </p>
                 </div>
 
-                <form className="w-full md:w-1/2  py-8  m-auto flex flex-col gap-5  text-lg">
+                <div className="lg:w-1/2 px-2">
+                <form className="w-full lg:96 mx-auto md:px-20 lg:px-15  py-5  m-auto flex flex-col gap-5  text-lg">
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Name</label> */}
                         <input
@@ -133,12 +134,12 @@ const ContactForm = () => {
                     </div>
                     <div className="flex flex-col px-8 md:px-0">
                         {/* <label>Message</label> */}
-                        <input
-                            className="px-4 py-3  bg-gray-700 text-white"
+                        <textarea
+                            className="px-4 py-3 h-24 md:h-40 bg-gray-700 text-white relative top-0"
                             name="message"
                             value={formik.values.message}
                             onChange={formik.handleChange}
-                            type="text"
+                            
                             placeholder="Message"
                         />
                         {formik.errors?.message && formik.touched?.message && (
@@ -156,7 +157,8 @@ const ContactForm = () => {
                             Submit
                         </button>
                     </div>
-                </form>            
+                </form>  
+                    </div>          
             </div>
         </div>
     );

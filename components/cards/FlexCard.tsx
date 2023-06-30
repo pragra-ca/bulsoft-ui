@@ -14,7 +14,7 @@ interface FlexCardType {
 
 const FlexCard = ({cardData}:FlexCardType) => {
   return (
-    <div className='lg:w-10/12 m-auto'>
+    <div className='md:w-full m-auto'>
         {cardData && cardData?.map((item:CardType,index:number)=> {
             if(index % 2 === 0) {
                 return <div className='flex flex-col lg:flex-row space-around mt-8 md:mt-6' key={index}>

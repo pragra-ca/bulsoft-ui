@@ -10,86 +10,52 @@ import bulsoft from "@/public/logo/bulsoft.svg"
 import {NavLinks} from "@/constants/NavInfo"
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import MobileNavbar from './MobileNavbar';
 const Navbar = () => {
 
     const router = useRouter()
 
     return (
-        <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50">
+        <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50 ">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl lg:px-8 font-poppins">
-                <div className="flex h-16 justify-between px-2" >
-                  <div className="lg:w-full flex lg:justify-around">
-                    <div className="flex items-center">
-                      <Image
+              <MobileNavbar/>
+
+              <div className="hidden md:flex w-full mx-auto  h-16 justify-between  max-w-7xl 2xl:container font-poppins">
+
+              <div className="flex px-4 justify-between items-center ml-5">
+                     
+                     <Image
                       onClick={()=> router.push("/")}
-                        className="block h-8 w-auto lg:hidden cursor-pointer"
-                        src={bulsoft}
-                        alt="bulsoft"
-                      />
-                      <Image
-                       onClick={()=> router.push("/")}
-                        className="hidden h-8 w-auto lg:block cursor-pointer"
-                        src={bulsoft}
-                        alt="bulsoft"
-                      />
-                    </div>
-                    <div className="hidden sm:ml-3 md:ml-12 lg:ml-60 sm:flex sm:space-x-5 md:space-x-auto">
-                      {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                       className="hidden h-8 w-auto md:block cursor-pointer"
+                       src={bulsoft}
+                       alt="bulsoft"
+                     />
+                   </div>
+
+                   <div className="hidden sm:ml-3 md:ml-12 lg:ml-60 mr-10 sm:flex sm:space-x-5 md:space-x-auto">
+                 
+                     {
+                       NavLinks && NavLinks.map((navItem)=> (
+                          <h2 key={navItem.name}  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''}  pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
+                            <Link href={navItem.route}>
+                            {navItem.name}
+                           </Link>
+                          </h2>
+                       ))
+                     }
+                   </div>
                   
-                      {
-                        NavLinks && NavLinks.map((navItem)=> (
-                           <h2 key={navItem.name}  className={`capitalize inline-flex items-center ${navItem.route === router.asPath? 'border-b-2 border-indigo-500': ''}  pt-1 text-sm  font-bold text-gray-900 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
-                             <Link href={navItem.route}>
-                             {navItem.name}
-                            </Link>
-                           </h2>
-                        ))
-                      }
-                    </div>
-                  </div>
-                  <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                    
-    
-                  </div>
-                  <div className="-mr-2 flex items-center sm:hidden">
-                    {/* Mobile menu button */}
-                    <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                      <span className="sr-only">Open main menu</span>
-                      {open ? (
-                        <AiOutlineCloseCircle className="block h-6 w-6" aria-hidden="true" />
-                      ) : (
-                        <FiMenu className="block h-6 w-6" aria-hidden="true" />
-                      )}
-                    </Disclosure.Button>
-                  </div>
-                </div>
+                 
+                
               </div>
     
-              <Disclosure.Panel className="sm:hidden">
-                <div className="space-y-1 pb-3 pt-2">
-                  {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
-                  {
-                        NavLinks && NavLinks.map((navItem)=> (
-                           <Disclosure.Button 
-                           as="h3"
-                           key={navItem.name}
-                           onClick={()=> router.push(navItem.route)}
-                           className={`block capitalize ${navItem.route === router.asPath? 'border-l-4 border-indigo-500 bg-indigo-50 ': ''} py-2 pl-3 pr-4 text-base font-medium text-gray-500  hover:bg-gray-100 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500`}>
-                             {/* <Link className='w-full' href={navItem.route}> */}
-                             {navItem.name}
-                            {/* </Link> */}
-                           </Disclosure.Button>
-                        ))
-                      }
-                  
-                </div>
-               
-              </Disclosure.Panel>
-            </>
+           
+              </> 
           )}
+          
         </Disclosure>
+        
       )
   
 }
