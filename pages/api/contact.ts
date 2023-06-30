@@ -18,7 +18,9 @@ export default async (req:any, res:any) => {
 
         if( name && email && contact && message) {
             const transporter = nodemailer.createTransport({
-                service: 'gmail',
+              host: "smtp.gmail.com",
+              port: 587, 
+              secure: false,
                 auth: {
                   user: user,
                   pass: pass
