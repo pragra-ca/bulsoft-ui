@@ -7,7 +7,7 @@ const HeroComponent = () => {
   const router = useRouter()
   return (
    
-         <div className="relative bg-hero-back bg-no-repeat mx-auto 2xl:container max-w-7xl py-4 px-4 sm:px-6">
+         <div className="relative bg-hero-back bg-no-repeat mx-auto 2xl:container max-w-7xl py-4 lg:pt-15  px-4 sm:px-6">
      
         <div className=" grid lg:grid-cols-2 lg:gap-x-10 justify-center md:justify-between   pb-24 pt-10 lg:col-span-7 xl:col-span-6">
           <div className="mx-auto md:max-w-2xl lg:max-w-3xl lg:mx-0 ">
