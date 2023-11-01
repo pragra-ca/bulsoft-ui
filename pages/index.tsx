@@ -1,33 +1,33 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Navbar from '@/components/common/Navbar'
-import Layout from '@/components/common/Layout'
-import HeroComponent from '@/components/common/HeroComponent'
-import MarqueeComponent from '@/components/Marquee'
-import CarouselComponent from '@/components/carouselComponent'
-import ProcessComponent from '@/components/process'
-import ManagementComponent from '@/components/management'
-import Seo from '@/components/seo'
-import AboutComponent from '@/components/about'
-import TestingServicesComponent from '@/components/testingServices'
-import GoToContact from '@/components/contact/GoToContact'
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import Navbar from "@/components/common/Navbar";
+import Layout from "@/components/common/Layout";
+import HeroComponent from "@/components/common/HeroComponent";
+import MarqueeComponent from "@/components/Marquee";
+import CarouselComponent from "@/components/carouselComponent";
+import ProcessComponent from "@/components/process";
+import ManagementComponent from "@/components/management";
+import Seo from "@/components/seo";
+import AboutComponent from "@/components/about";
+import TestingServicesComponent from "@/components/testingServices";
+import GoToContact from "@/components/contact/GoToContact";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <Layout>
       <div className="w-full bg-white">
-        <Seo pageTitle='Home' />
+        <Seo pageTitle="Home" />
         <HeroComponent />
         <MarqueeComponent />
-        <AboutComponent/>
+        <AboutComponent />
         <ProcessComponent />
-        <ManagementComponent/>
-        <TestingServicesComponent/>
-        <CarouselComponent/>
+        <ManagementComponent />
+        <TestingServicesComponent />
+
         <GoToContact />
       </div>
     </Layout>
-  )
+  );
 }
