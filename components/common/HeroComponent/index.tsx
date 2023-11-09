@@ -44,7 +44,7 @@ const HeroComponent = () => {
             <h2 className="text-lg lg:text-3xl leading-6 lg:leading-10 text-white">
               Enhance your customer happiness index with our services
             </h2>
-            <button className="bg-white px-1 md:px-2 lg:px-8 py-1 md:py-2 lg:py-4">Connect with Us</button>
+            <button className="bg-white px-1 md:px-2 lg:px-8 py-1 md:py-2 lg:py-4"  onClick={() => router.push("/contact")}>Connect with Us</button>
           </div>
         </div>
       </div>
