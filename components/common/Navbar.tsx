@@ -21,7 +21,7 @@ const Navbar = () => {
           <MobileNavbar />
 
           <div className="hidden md:flex w-full mx-auto  h-16 justify-between  max-w-7xl 2xl:container font-poppins">
-            <div className="flex px-4 justify-between items-center ml-5">
+            <div className="w-1/4 flex px-4 justify-between items-center ml-5">
               <Image
                 onClick={() => router.push("/")}
                 className="hidden h-12 w-auto md:block cursor-pointer"
@@ -30,7 +30,7 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="hidden sm:ml-4 md:ml-12 lg:ml-60 mr-10 sm:flex sm:space-x-10 md:space-x-auto">
+            <div className="w-3/4 hidden sm:ml-4 md:ml-12 lg:ml-60 mr-10 sm:flex justify-around sm:space-x-10 md:space-x-auto">
               {NavLinks &&
                 NavLinks.map((navItem) => (
                   <h2

@@ -19,7 +19,7 @@ const GoToContact = () => {
           <p className="mt-4 lg:mt-8"></p>
         </div>
 
-        <div className="w-96 lg:w-1/2 h-80 m-auto lg:m-0 lg:h-auto flex justify-center items-center bg-contact-bg bg-right bg-no-repeat bg-cover rounded-lg border border-black">
+        <div className="w-screen md:w-96 lg:w-1/2 h-80 m-auto lg:m-0 lg:h-auto flex justify-center items-center bg-contact-bg bg-right bg-no-repeat bg-cover rounded-lg border border-black">
           <button
             type="submit"
             onClick={() => router.push("/contact")}

@@ -3,7 +3,8 @@ import React from "react";
 import people from "@/public/aboutPage/people.png";
 const AboutComponent = () => {
   return (
-    <div className="flex flex-col md:flex-row mx-auto font-poppins">
+    <div className="2xl:container max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row mx-auto font-poppins">
       <div className="md:w-1/2">
         <Image className="w-full" src={people} alt="" />
       </div>
@@ -26,6 +27,7 @@ const AboutComponent = () => {
           doing so at minimal cost, time & future maintenance.
         </p>
       </div>
+    </div>
     </div>
   );
 };
