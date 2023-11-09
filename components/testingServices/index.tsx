@@ -4,7 +4,7 @@ import { TestingCardData } from "@/constants/CardInfo";
 const TestingServicesComponent = () => {
   return (
     <div className="mx-auto 2xl:container max-w-7xl font-poppins">
-      <div className="m-auto md:w-1/2 px-6 py-4">
+      <div className="m-auto lg:w-9/12 px-6 py-4">
         <h1 className="font-semibold	 text-2xl lg:text-5xl	 py-2 text-center text-black">
           APPLICATION TESTING
         </h1>

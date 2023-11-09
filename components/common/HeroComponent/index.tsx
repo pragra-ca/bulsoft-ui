@@ -10,8 +10,8 @@ const HeroComponent = () => {
       <div className="relative bg-hero-back bg-no-repeat pt-4 md:pt-16 px-4 sm:px-6">
         <div className="flex flex-col gap-y-4 gap-x-4 lg:flex-row justify-center max-w-7xl mb-12 2xl:container px-8 lg:pt-8 mx-auto">
           <div className="lg:w-1/2 flex items-center justify-center md:justify-between">
-            <div className="mx-auto text-center lg:text-left">
-              <h1 className="lg:mt-20 text-3xl lg:text-6xl leading-12 font-semibold tracking-tight text-gray-900">
+            <div className="mx-auto text-center md:text-left">
+              <h1 className="lg:mt-20 text-3xl md:text-5xl lg:text-6xl leading-12 font-semibold tracking-tight text-gray-900">
                 Quality{" "}
                 <span className="text-blue-800 font-extrabold">Redefined</span>.
               </h1>
