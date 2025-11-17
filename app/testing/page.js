@@ -1,13 +1,15 @@
+'use client';
+
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Button } from '../components/ui/button';
-import { mockServices } from '../mock';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { mockServices } from '@/mock';
 import * as LucideIcons from 'lucide-react';
 import { CheckCircle, ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-const Testing = () => {
+export default function Testing() {
   const getIcon = (iconName) => {
     const IconComponent = LucideIcons[iconName.split('-').map((word, i) => 
       i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
@@ -215,13 +217,13 @@ const Testing = () => {
             Let's discuss how our comprehensive testing services can accelerate your delivery and improve quality
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-sky-600 hover:bg-gray-100 shadow-xl text-lg px-10 py-6">
                 Schedule Consultation
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-            <Link to="/case-studies">
+            <Link href="/case-studies">
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
                 View Success Stories
               </Button>
@@ -231,6 +233,5 @@ const Testing = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Testing;

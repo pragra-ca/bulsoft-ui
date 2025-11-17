@@ -1,11 +1,14 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -15,18 +18,18 @@ const Header = () => {
     { path: '/contact', label: 'Contact' }
   ];
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img 
               src="https://www.bulsoft.com/_next/static/media/bulsoft.1e1f3ecc.svg" 
               alt="Bulsoft Logo" 
-              className="h-12 w-auto"
+              className="h-14 w-auto -ml-8"
               style={{
                 filter: 'grayscale(100%) contrast(1.2) brightness(0.9)',
                 imageRendering: 'crisp-edges'
@@ -39,7 +42,7 @@ const Header = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`text-sm font-medium transition-colors hover:text-sky-700 ${
                   isActive(link.path) ? 'text-sky-700' : 'text-gray-700'
                 }`}
@@ -68,7 +71,7 @@ const Header = () => {
             {navLinks.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
                   isActive(link.path)

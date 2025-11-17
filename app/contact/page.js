@@ -1,14 +1,16 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
-import { Label } from '../components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { toast } from 'sonner';
 
-const Contact = () => {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,19 +18,41 @@ const Contact = () => {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    console.log('Form submitted:', formData);
-    toast.success('Thank you! We\'ll get back to you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      service: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message || 'Thank you! We\'ll get back to you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        toast.error(data.error || 'Failed to submit form. Please try again.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('An error occurred. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field, value) => {
@@ -131,9 +155,10 @@ const Contact = () => {
                       type="submit" 
                       size="lg" 
                       className="w-full bg-gradient-to-r from-sky-600 to-sky-500 text-white hover:from-sky-700 hover:to-sky-600"
+                      disabled={isSubmitting}
                     >
-                      Send Message
-                      <Send className="ml-2" size={20} />
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {!isSubmitting && <Send className="ml-2" size={20} />}
                     </Button>
                   </form>
                 </CardContent>
@@ -153,8 +178,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Email</div>
-                      <div className="text-sm text-gray-600">contact@bulsoft.com</div>
-                      <div className="text-sm text-gray-600">support@bulsoft.com</div>
+                      <div className="text-sm text-gray-600">info@bulsoft.com</div>
                     </div>
                   </div>
 
@@ -164,8 +188,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="font-medium text-gray-900">Phone</div>
-                      <div className="text-sm text-gray-600">+1 (555) 123-4567</div>
-                      <div className="text-sm text-gray-600">+44 20 1234 5678</div>
+                      <div className="text-sm text-gray-600">+1 (201) 308-3005</div>
                     </div>
                   </div>
 
@@ -214,15 +237,15 @@ const Contact = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { city: 'San Francisco', country: 'USA', address: '123 Tech Street, SF, CA 94105' },
-              { city: 'London', country: 'UK', address: '456 Innovation Lane, London EC1A 1BB' },
-              { city: 'Singapore', country: 'Singapore', address: '789 Testing Boulevard, Singapore 018956' }
+              { city: 'San Jose', country: 'USA', address: '2 North Market Street, Suite #400\nSan Jose, California 95113' },
+              { city: 'Noida', country: 'India', address: 'B-4/5, Sector 63\nNoida, UP 201301' },
+              { city: 'Singapore', country: 'Singapore', address: '65 Chulia Street, #46-00 OCBC Centre\nSingapore 049513' }
             ].map((office, idx) => (
               <Card key={idx} className="border-2 border-gray-200 bg-white">
                 <CardContent className="pt-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{office.city}</h3>
                   <p className="text-sm text-sky-700 font-medium mb-3">{office.country}</p>
-                  <p className="text-sm text-gray-600">{office.address}</p>
+                  <p className="text-sm text-gray-600 whitespace-pre-line">{office.address}</p>
                 </CardContent>
               </Card>
             ))}
@@ -231,6 +254,5 @@ const Contact = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Contact;

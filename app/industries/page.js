@@ -1,13 +1,15 @@
+'use client';
+
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Button } from '../components/ui/button';
-import { mockIndustries } from '../mock';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { mockIndustries } from '@/mock';
 import * as LucideIcons from 'lucide-react';
 import { ArrowRight, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-const Industries = () => {
+export default function Industries() {
   const getIcon = (iconName) => {
     const IconComponent = LucideIcons[iconName.split('-').map((word, i) => 
       i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
@@ -150,7 +152,7 @@ const Industries = () => {
           <p className="text-lg text-sky-50 mb-8">
             Let's discuss how we can help your industry meet its unique quality challenges
           </p>
-          <Link to="/contact">
+          <Link href="/contact">
             <Button size="lg" className="bg-white text-sky-700 hover:bg-gray-100">
               Contact Our Experts
               <ArrowRight className="ml-2" size={20} />
@@ -160,6 +162,5 @@ const Industries = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Industries;

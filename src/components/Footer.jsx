@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
 
 const Footer = () => {
@@ -41,22 +41,22 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-sm hover:text-sky-500 transition-colors">
+                <Link href="/" className="text-sm hover:text-sky-500 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/testing" className="text-sm hover:text-sky-500 transition-colors">
+                <Link href="/testing" className="text-sm hover:text-sky-500 transition-colors">
                   Testing Services
                 </Link>
               </li>
               <li>
-                <Link to="/industries" className="text-sm hover:text-sky-500 transition-colors">
+                <Link href="/industries" className="text-sm hover:text-sky-500 transition-colors">
                   Industries
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="text-sm hover:text-sky-500 transition-colors">
+                <Link href="/case-studies" className="text-sm hover:text-sky-500 transition-colors">
                   Case Studies
                 </Link>
               </li>
@@ -81,11 +81,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>contact@bulsoft.com</span>
+                <span>info@bulsoft.com</span>
               </li>
               <li className="flex items-start space-x-2 text-sm">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (201) 308-3005</span>
               </li>
               <li className="flex items-start space-x-2 text-sm">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />

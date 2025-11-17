@@ -1,12 +1,14 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight, CheckCircle, Sparkles, Shield, Zap, TrendingUp, Award, Globe, Target } from 'lucide-react';
-import { Button } from '../components/ui/button';
-import { Card, CardContent } from '../components/ui/card';
-import { mockServices, mockStats, mockTestimonials } from '../mock';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { mockServices, mockStats, mockTestimonials } from '@/mock';
 import * as LucideIcons from 'lucide-react';
 
-const Home = () => {
+export default function Home() {
   const getIcon = (iconName) => {
     const IconComponent = LucideIcons[iconName.split('-').map((word, i) => 
       i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1)
@@ -45,7 +47,7 @@ const Home = () => {
                   Schedule Consultation
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
-                <Link to="/case-studies">
+                <Link href="/case-studies">
                   <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:border-sky-600 hover:text-sky-600">
                     View Case Studies
                   </Button>
@@ -158,7 +160,7 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/testing">
+            <Link href="/testing">
               <Button size="lg" variant="outline" className="border-2 border-sky-600 text-sky-600 hover:bg-sky-50">
                 Explore All Services
                 <ArrowRight className="ml-2" size={20} />
@@ -260,13 +262,13 @@ const Home = () => {
             comprehensive testing solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link href="/contact">
               <Button size="lg" className="bg-white text-sky-600 hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-10 py-6">
                 Schedule Consultation
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </Link>
-            <Link to="/case-studies">
+            <Link href="/case-studies">
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
                 View Case Studies
               </Button>
@@ -276,6 +278,5 @@ const Home = () => {
       </section>
     </div>
   );
-};
+}
 
-export default Home;

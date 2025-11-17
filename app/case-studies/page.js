@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Badge } from '../components/ui/badge';
-import { Button } from '../components/ui/button';
-import { mockCaseStudies } from '../mock';
-import { CheckCircle, Clock, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+'use client';
 
-const CaseStudies = () => {
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { mockCaseStudies } from '@/mock';
+import { CheckCircle, Clock, ArrowRight } from 'lucide-react';
+
+export default function CaseStudies() {
   const [selectedIndustry, setSelectedIndustry] = useState('All');
 
   const industries = ['All', ...new Set(mockCaseStudies.map(cs => cs.industry))];
@@ -146,7 +148,7 @@ const CaseStudies = () => {
           <p className="text-lg text-sky-50 mb-8">
             Join the companies that have transformed their quality assurance with Bulsoft
           </p>
-          <Link to="/contact">
+          <Link href="/contact">
             <Button size="lg" className="bg-white text-sky-700 hover:bg-gray-100">
               Start Your Project
               <ArrowRight className="ml-2" size={20} />
@@ -156,6 +158,5 @@ const CaseStudies = () => {
       </section>
     </div>
   );
-};
+}
 
-export default CaseStudies;

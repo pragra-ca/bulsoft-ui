@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Bulsoft UI - Next.js Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern Next.js application for Bulsoft's enterprise quality assurance solutions.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+- Node.js 18+ 
+- Yarn (or npm)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+yarn install
+```
 
-### `npm test`
+### Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+yarn dev
+```
 
-### `npm run build`
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Build for Production
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+yarn build
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contact Form Email Setup
 
-### `npm run eject`
+The contact form sends emails to `info@bulsoft.com` using the Resend API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Setup Instructions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Create a Resend account** at [https://resend.com](https://resend.com)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Get your API key** from the Resend dashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Create a `.env.local` file** in the root directory:
 
-## Learn More
+```env
+RESEND_API_KEY=re_your_api_key_here
+RESEND_FROM_EMAIL=Bulsoft Contact Form <noreply@yourdomain.com>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Verify your domain** (optional but recommended):
+   - Go to Resend dashboard → Domains
+   - Add and verify your domain
+   - Update `RESEND_FROM_EMAIL` to use your verified domain
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Testing Without API Key
 
-### Code Splitting
+If `RESEND_API_KEY` is not set, the form will still work but emails won't be sent. The submission will be logged to the console in development mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Alternative Email Services
 
-### Analyzing the Bundle Size
+To use a different email service (SendGrid, Mailgun, etc.), modify `/app/api/contact/route.js` to use your preferred service's API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Project Structure
 
-### Making a Progressive Web App
+```
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   │   └── contact/       # Contact form API
+│   ├── contact/           # Contact page
+│   ├── testing/            # Testing services page
+│   ├── industries/         # Industries page
+│   ├── case-studies/      # Case studies page
+│   ├── layout.js           # Root layout
+│   └── page.js             # Home page
+├── src/
+│   ├── components/         # React components
+│   │   ├── ui/            # UI components (shadcn/ui)
+│   │   ├── Header.jsx     # Site header
+│   │   └── Footer.jsx     # Site footer
+│   ├── lib/               # Utilities
+│   └── mock.js            # Mock data
+└── public/                # Static assets
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies
 
-### Advanced Configuration
+- **Next.js 15** - React framework
+- **React 19** - UI library
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI components
+- **Resend** - Email service
+- **Sonner** - Toast notifications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Private - All rights reserved
