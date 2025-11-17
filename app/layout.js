@@ -5,13 +5,151 @@ import Footer from '@/components/Footer';
 import { Providers } from '@/components/providers';
 
 export const metadata = {
-  title: 'Bulsoft | Enterprise Quality Assurance Solutions',
-  description: 'Enterprise-grade quality assurance solutions combining AI-powered innovation with 15+ years of expertise',
+  metadataBase: new URL('https://www.bulsoft.com'),
+  title: {
+    default: 'Bulsoft | Enterprise Quality Assurance Solutions',
+    template: '%s | Bulsoft',
+  },
+  description: 'Enterprise-grade quality assurance solutions combining AI-powered innovation with 15+ years of expertise. Specializing in AI agent testing, automation testing, and comprehensive QA services for global enterprises.',
+  keywords: [
+    'quality assurance',
+    'QA testing',
+    'AI agent testing',
+    'automation testing',
+    'software testing',
+    'test automation',
+    'AI testing',
+    'performance testing',
+    'security testing',
+    'enterprise QA',
+    'BFSI testing',
+    'telecom testing',
+    'healthcare testing',
+    'FinTech testing',
+    'SaaS testing',
+    'Bulsoft',
+  ],
+  authors: [{ name: 'Bulsoft' }],
+  creator: 'Bulsoft',
+  publisher: 'Bulsoft',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://www.bulsoft.com',
+    siteName: 'Bulsoft',
+    title: 'Bulsoft | Enterprise Quality Assurance Solutions',
+    description: 'Enterprise-grade quality assurance solutions combining AI-powered innovation with 15+ years of expertise. Trusted by 200+ global companies.',
+    images: [
+      {
+        url: '/favicon.svg',
+        width: 42,
+        height: 42,
+        alt: 'Bulsoft Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bulsoft | Enterprise Quality Assurance Solutions',
+    description: 'Enterprise-grade quality assurance solutions combining AI-powered innovation with 15+ years of expertise.',
+    images: ['/favicon.svg'],
+    creator: '@bulsoft',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
+  manifest: '/site.webmanifest',
+  verification: {
+    // Add your verification codes here when available
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+    // bing: 'your-bing-verification-code',
+  },
+  alternates: {
+    canonical: 'https://www.bulsoft.com',
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Bulsoft',
+              url: 'https://www.bulsoft.com',
+              logo: 'https://www.bulsoft.com/favicon.svg',
+              description: 'Enterprise-grade quality assurance solutions combining AI-powered innovation with 15+ years of expertise.',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+1-201-308-3005',
+                contactType: 'Customer Service',
+                email: 'info@bulsoft.com',
+                areaServed: 'Worldwide',
+                availableLanguage: ['English'],
+              },
+              address: [
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: '2 North Market Street, Suite #400',
+                  addressLocality: 'San Jose',
+                  addressRegion: 'California',
+                  postalCode: '95113',
+                  addressCountry: 'US',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: '65 Chulia Street, #46-00 OCBC Centre',
+                  addressLocality: 'Singapore',
+                  postalCode: '049513',
+                  addressCountry: 'SG',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'B-4/5, Sector 63',
+                  addressLocality: 'Noida',
+                  addressRegion: 'UP',
+                  postalCode: '201301',
+                  addressCountry: 'IN',
+                },
+              ],
+              sameAs: [
+                'https://www.linkedin.com/company/bulsoft',
+                'https://twitter.com/bulsoft',
+                'https://github.com/bulsoft',
+              ],
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.9',
+                reviewCount: '200',
+              },
+            }),
+          }}
+        />
+      </head>
       <body>
         <Script src="https://assets.emergent.sh/scripts/emergent-main.js" strategy="afterInteractive" />
         <Script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js" strategy="afterInteractive" />
@@ -100,4 +238,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
