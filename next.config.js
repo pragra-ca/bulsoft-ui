@@ -2,15 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['www.bulsoft.com'],
-  },
-  // Preserve path alias support
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@': require('path').resolve(__dirname, 'src'),
-    };
-    return config;
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.bulsoft.com',
+      },
+    ],
   },
 };
 
