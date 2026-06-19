@@ -3,6 +3,13 @@ import Script from 'next/script';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Providers } from '@/components/providers';
+import { Sora } from 'next/font/google';
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sora',
+});
 
 export const metadata = {
   metadataBase: new URL('https://www.bulsoft.com'),
@@ -150,7 +157,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body>
+      <body className={`${sora.className} ${sora.variable} antialiased`}>
         <Script src="https://assets.emergent.sh/scripts/emergent-main.js" strategy="afterInteractive" />
         <Script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js" strategy="afterInteractive" />
         <Script src="https://d2adkz2s9zrlge.cloudfront.net/rrweb-recorder-20250919-1.js" strategy="afterInteractive" />
